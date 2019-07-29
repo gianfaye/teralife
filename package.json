@@ -4,21 +4,27 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href 'https://gianfaye.com/teralife/' --output-path=dist",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "npx ngh --no-silent"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~8.1.2",
+    "@angular/animations": "^8.1.3",
+    "@angular/cdk": "^8.1.1",
     "@angular/common": "~8.1.2",
     "@angular/compiler": "~8.1.2",
     "@angular/core": "~8.1.2",
+    "@angular/flex-layout": "^8.0.0-beta.26",
     "@angular/forms": "~8.1.2",
+    "@angular/material": "^8.1.1",
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
+    "hammerjs": "^2.0.8",
+    "onsenui": "^2.10.8",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

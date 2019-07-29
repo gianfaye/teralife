@@ -1,0 +1,71 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav cmode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')" class="sidenav">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>teralife</span>
+    </mat-toolbar> -->
+    <mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+<!-- 
+      <button mat-icon-button (click)="toggleSidenav.emit()"> -->
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+<!-- 
+      <span> {{ 'APP_TOOLBAR_TITLE' | translate }} </span> -->
+      <span> TeraLife </span>
+
+      <div fxFlex fxLayout fxLayoutAlign="flex-end">
+
+        <ul fxLayout fxLayoutGap="20px" class="nav-list">
+
+          <li fxHide.xs>
+            <button mat-icon-button>
+              <mat-icon>settings</mat-icon>
+            </button>
+          </li>
+
+          <li fxHide.xs>
+            <button mat-icon-button>
+              <mat-icon>help_outline</mat-icon>
+            </button>
+          </li>
+
+          <li>
+            <button mat-icon-button>
+              <mat-icon>person_outline</mat-icon>
+            </button>
+            <mat-menu>
+              <button mat-menu-item (click)="sidenav.toggle()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Sign out</span>
+              </button>
+            </mat-menu>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </mat-toolbar-row>
+
+  </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
